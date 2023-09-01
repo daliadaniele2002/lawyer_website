@@ -30,6 +30,7 @@ class LawyerSections extends StatelessWidget {
                       child: ContentHeading(),
                     ),
                     const SizedBox(height: 48),
+                    // TODO убрать захардкоженую высоту
                     SizedBox(height:500, child: CardsGrid(rowsCount: 2)),
                     const SizedBox(height: 48),
                     LawyerButton(
@@ -95,6 +96,7 @@ class CardsGrid extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    //TODO Сделать, чтобы размер грида считался от размера внутреннего контента
     final crossAxisCont = (list.length / rowsCount).ceil();
     return GridView.builder(
       physics: NeverScrollableScrollPhysics(),
@@ -131,6 +133,7 @@ class LawyerCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+      //TODO Сделать так, чтобы размер карточки считался от размера внутреннего контента
     return Container(
       color: AppColors.blue,
       child: Padding(
